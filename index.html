@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="light-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD com JSON Modular</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="theme-toggle">
+            <button id="themeToggle" aria-label="Alternar tema">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+        
+        <h1>Gerenciador de Usuários</h1>
+        
+        <div class="form-container">
+            <div id="errorMessage" class="error-message">Preencha todos os campos</div>
+            <div class="input-group">
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" id="nome" placeholder="Nome">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" id="email" placeholder="E-mail">
+            </div>
+            <button id="btnCriar">
+                <i class="fas fa-plus-circle"></i> Criar
+            </button>
+        </div>
+
+        <div class="list-container">
+            <h2>Usuários Cadastrados</h2>
+            <ul id="listaUsuarios"></ul>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <script>
+        // Script para alternar entre temas claro e escuro
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-theme');
+            document.documentElement.classList.toggle('light-theme');
+            
+            // Salvar preferência do usuário
+            const currentTheme = document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light';
+            localStorage.setItem('theme', currentTheme);
+        });
+        
+        // Verificar tema salvo
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.remove('light-theme');
+                document.documentElement.classList.add('dark-theme');
+            }
+        });
+    </script>
+</body>
+</html>

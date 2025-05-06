@@ -1,0 +1,403 @@
+/* Variáveis de cores para temas */
+:root {
+    /* Fontes */
+    --font-primary: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  
+    /* Animações */
+    --transition-speed: 0.3s;
+    --transition-timing: ease;
+  }
+  
+  /* Tema Claro (padrão) */
+  .light-theme {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #6c757d;
+    --accent-primary: #4361ee;
+    --accent-secondary: #3a56d4;
+    --accent-success: #2ecc71;
+    --accent-success-hover: #27ae60;
+    --accent-warning: #f39c12;
+    --accent-warning-hover: #e67e22;
+    --accent-danger: #e74c3c;
+    --accent-danger-hover: #c0392b;
+    --border-color: #e9ecef;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-color-hover: rgba(0, 0, 0, 0.15);
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+  }
+  
+  /* Tema Escuro */
+  .dark-theme {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --text-primary: #f8f9fa;
+    --text-secondary: #adb5bd;
+    --accent-primary: #6366f1;
+    --accent-secondary: #818cf8;
+    --accent-success: #34d399;
+    --accent-success-hover: #10b981;
+    --accent-warning: #fbbf24;
+    --accent-warning-hover: #f59e0b;
+    --accent-danger: #f87171;
+    --accent-danger-hover: #ef4444;
+    --border-color: #2d2d2d;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-color-hover: rgba(0, 0, 0, 0.4);
+    --input-bg: #2d2d2d;
+    --input-border: #3d3d3d;
+  }
+  
+  /* Reset e estilos gerais */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+  }
+  
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color var(--transition-speed) var(--transition-timing), color var(--transition-speed)
+      var(--transition-timing);
+    min-height: 100vh;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Botão de alternância de tema */
+  .theme-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  #themeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    padding: 8px;
+    border-radius: 50%;
+    background-color: var(--bg-secondary);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: all var(--transition-speed) var(--transition-timing);
+  }
+  
+  #themeToggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color-hover);
+  }
+  
+  .light-theme #themeToggle .fa-sun {
+    display: none;
+  }
+  
+  .dark-theme #themeToggle .fa-moon {
+    display: none;
+  }
+  
+  /* Cabeçalho */
+  h1,
+  h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--text-primary);
+    font-weight: 600;
+    transition: color var(--transition-speed) var(--transition-timing);
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  /* Container do formulário */
+  .form-container {
+    background-color: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    margin-bottom: 30px;
+    transition: background-color var(--transition-speed) var(--transition-timing), box-shadow var(--transition-speed)
+      var(--transition-timing);
+  }
+  
+  /* Grupo de input com ícone */
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    transition: color var(--transition-speed) var(--transition-timing);
+  }
+  
+  /* Estilos dos inputs */
+  input {
+    width: 100%;
+    padding: 14px 16px 14px 45px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: all var(--transition-speed) var(--transition-timing);
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 2px 8px var(--shadow-color-hover);
+    transform: translateY(-2px);
+  }
+  
+  input:focus + .input-icon {
+    color: var(--accent-primary);
+  }
+  
+  input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+  }
+  
+  /* Estilo do botão */
+  button {
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all var(--transition-speed) var(--transition-timing);
+    box-shadow: 0 4px 6px rgba(67, 97, 238, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  button:hover {
+    background-color: var(--accent-secondary);
+    box-shadow: 0 6px 8px rgba(67, 97, 238, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(67, 97, 238, 0.3);
+  }
+  
+  #btnCriar {
+    width: 100%;
+    margin-top: 10px;
+    background-color: var(--accent-success);
+  }
+  
+  #btnCriar:hover {
+    background-color: var(--accent-success-hover);
+  }
+  
+  /* Container da lista */
+  .list-container {
+    background-color: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: background-color var(--transition-speed) var(--transition-timing), box-shadow var(--transition-speed)
+      var(--transition-timing);
+  }
+  
+  /* Lista de usuários */
+  #listaUsuarios {
+    list-style: none;
+    width: 100%;
+  }
+  
+  #listaUsuarios li {
+    background-color: var(--bg-secondary);
+    padding: 16px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all var(--transition-speed) var(--transition-timing);
+    border: 1px solid var(--border-color);
+    animation: fadeIn 0.5s ease;
+  }
+  
+  #listaUsuarios li:hover {
+    box-shadow: 0 4px 8px var(--shadow-color-hover);
+    transform: translateY(-2px);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Estilo para os botões dentro da lista */
+  #listaUsuarios button {
+    width: auto;
+    padding: 8px 12px;
+    margin: 0 4px;
+    font-size: 0.85rem;
+  }
+  
+  #listaUsuarios button:first-of-type {
+    background-color: var(--accent-warning);
+    box-shadow: 0 2px 4px rgba(243, 156, 18, 0.3);
+  }
+  
+  #listaUsuarios button:first-of-type:hover {
+    background-color: var(--accent-warning-hover);
+    box-shadow: 0 4px 6px rgba(243, 156, 18, 0.4);
+  }
+  
+  #listaUsuarios button:last-of-type {
+    background-color: var(--accent-danger);
+    box-shadow: 0 2px 4px rgba(231, 76, 60, 0.3);
+  }
+  
+  #listaUsuarios button:last-of-type:hover {
+    background-color: var(--accent-danger-hover);
+    box-shadow: 0 4px 6px rgba(231, 76, 60, 0.4);
+  }
+  
+  /* Estilo para o nome e email do usuário */
+  .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-name {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  
+  .user-email {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  /* Mensagem de erro */
+  .error-message {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--accent-danger);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: none;
+    border-left: 4px solid var(--accent-danger);
+    font-size: 0.9rem;
+    transition: all var(--transition-speed) var(--transition-timing);
+  }
+  
+  .error-message.visible {
+    display: block;
+    animation: shake 0.5s ease;
+  }
+  
+  /* Animações para feedback visual */
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(5px);
+    }
+  }
+  
+  /* Responsividade */
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+  
+    input,
+    button {
+      padding: 12px 14px;
+    }
+  
+    .input-group .input-icon {
+      left: 12px;
+    }
+  
+    input {
+      padding-left: 40px;
+    }
+  
+    #listaUsuarios li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    #listaUsuarios button {
+      margin-top: 10px;
+    }
+  
+    /* Quando em tela pequena, os botões ficam lado a lado */
+    .action-buttons {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      margin-top: 10px;
+      gap: 8px;
+    }
+  }
+  
+  /* Estilo para quando não há usuários */
+  .empty-list {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+  
