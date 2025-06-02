@@ -2,7 +2,7 @@
 
 ## 📸 Preview do Projeto
 
-![Preview do Site](https://sjc.microlink.io/Ud0AlF48Vvws9QD-TYy0R3RVRApaQ2dGxdPjYDPTOUzIZ6NH4qTguqHxHTQvlIUG362h20e73DK-mwVtX8WIgg.jpeg)
+![Preview do Site]
 
 ## 📋 Sobre o Projeto
 
